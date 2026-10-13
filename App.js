@@ -1,10 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Projekt PMA </Text>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.input} placeholder="Zadaj úlohu" />
+        <Button title="ADD" />
+      </View>
+
+      <View style={styles.taskContainer}>
+        <Text style={styles.text}>Udalosti</Text>
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,11 +21,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#633ea4',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  text: {
-    fontSize: 60,
+  input: { borderWidth: 3, width: "80%", borderRadius: 8 },
+  inputContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
   },
+  taskContainer: { flex: 3, borderTopWidth: 3, margin: 20 },
+  text: { padding: 20 },
 });
